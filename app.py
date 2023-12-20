@@ -2,10 +2,34 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+JOBS = [
+  {
+    'id': 1,
+    'title': 'Python Developer',
+    'location': 'India',
+    'salary': 50000
+    
+  },
+  {
+    'id': 2,
+    'title': 'Data Scientist',
+    'location': 'USA',
+    'salary': 150000
+
+  },
+  {
+    'id': 3,
+    'title': 'Frontend Engineer',
+    'location': 'Remote',
+    'salary': 51000
+
+  }
+]
+
 
 @app.route('/')
 def hello_world():
-  return render_template('home.html')
+  return render_template('home.html', jobs = JOBS)
 
 
 if __name__ == "__main__":
